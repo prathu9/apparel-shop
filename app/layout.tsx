@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { roboto_condensed } from "./font";
 import "./globals.css";
+import Navigation from "./components/layout/Navigation";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={roboto_condensed.className}>{children}</body>
+      <body className={roboto_condensed.className}>
+        <Navigation />
+        {children}
+      </body>
     </html>
   );
 }

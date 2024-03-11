@@ -30,8 +30,6 @@ export default function Home() {
   ]
   
   return (
-    <main className="">
       <Directory categories={categories}/>
-    </main>
   );
 }
