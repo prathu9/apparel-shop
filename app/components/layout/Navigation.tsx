@@ -1,9 +1,20 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 
 import "./Navigation.styles.scss";
+import { useContext } from "react";
+import { UserContext } from "../../context/user.context";
+import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 const Navigation = () => {
+    const {currentUser} = useContext(UserContext);
+
+    const signOutHandler = async () =>{
+        await signOutUser();
+   }
+
+    console.log("user", currentUser);
     return(
         <>
             <div className="navigation">
@@ -19,9 +30,18 @@ const Navigation = () => {
                     <Link className="nav-link" href="/shop">
                         SHOP
                     </Link>
-                    <Link className="nav-link" href="/auth">
-                        SIGN IN
-                    </Link>
+                    {
+                        currentUser? 
+                        (
+                            <span className="nav-link" onClick={signOutHandler}>
+                                SIGN OUT
+                            </span>
+                        ):(
+                            <Link className="nav-link" href="/auth">
+                            SIGN IN
+                        </Link>
+                        )
+                    }
                 </div>
             </div>
         </>

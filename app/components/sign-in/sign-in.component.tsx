@@ -28,15 +28,12 @@ const SignInForm = () => {
   };
 
   const logGoogleUser = async () => {
-    try{
-        const {user} = await signInWithGooglePopup();
-        await createUserDocumentFromAuth(user);
+    try {
+      await signInWithGooglePopup();
+    } catch (err) {
+      console.log(err);
     }
-    catch(err){
-        console.log(err);
-    }
-   
-}
+  };
 
   const resetFormFields = () => {
     setFormField(defaultFormFields);
@@ -46,17 +43,16 @@ const SignInForm = () => {
     event.preventDefault();
 
     try {
-        const response = await signInAuthUserWithEmailAndPasword(email, password);
-        console.log(response);
+      await signInAuthUserWithEmailAndPasword(email, password);
       resetFormFields();
     } catch (error) {
-        switch(error.code){
-            case "auth/invalid-credential":
-                alert("Incorrect email or password");
-                break;
-            default:
-                console.log(error);
-        }
+      switch (error.code) {
+        case "auth/invalid-credential":
+          alert("Incorrect email or password");
+          break;
+        default:
+          console.log(error);
+      }
     }
   };
 
@@ -83,8 +79,10 @@ const SignInForm = () => {
           required
         />
         <div className="buttons-container">
-            <Button type="submit">Sign In</Button>
-            <Button type="button" buttonType="google" onClick={logGoogleUser}>Google Sign In</Button>
+          <Button type="submit">Sign In</Button>
+          <Button type="button" buttonType="google" onClick={logGoogleUser}>
+            Google Sign In
+          </Button>
         </div>
       </form>
     </div>
