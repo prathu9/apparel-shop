@@ -2,13 +2,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import "./Navigation.styles.scss";
+import "./navigation.styles.scss";
 import { useContext } from "react";
 import { UserContext } from "../../context/user.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
+import CartIcon from "../cart-icon/cart-icon.component";
+import CartDropdown from "../cart-dropdown/cart-dropdown.component";
+import { CartContext } from "../../context/cart.context";
 
 const Navigation = () => {
     const {currentUser} = useContext(UserContext);
+    const {isCartOpen} = useContext(CartContext);
 
     const signOutHandler = async () =>{
         await signOutUser();
@@ -42,7 +46,11 @@ const Navigation = () => {
                         </Link>
                         )
                     }
+                    <CartIcon />
                 </div>
+                {
+                    isCartOpen && <CartDropdown />
+                }
             </div>
         </>
     )
