@@ -1,8 +1,9 @@
+import { CategoryItemType } from "../../type";
 import CategoryItem from "../category-item/category-item.component"
 import "./directory.style.scss"
 
 type DirectoryProp = {
-  categories: CategoryItem[];
+  categories: CategoryItemType[];
 };
 
 const Directory = ({ categories }: DirectoryProp) => {

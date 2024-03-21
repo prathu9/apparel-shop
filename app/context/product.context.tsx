@@ -1,13 +1,8 @@
 "use client";
 import { createContext, useState } from "react";
 import PRODUCTS from "../shop-data.json";
+import { ProductType } from "../type";
 
-type ProductType = {
-    id: number | string,
-    name: string,
-    imageUrl: string,
-    price: number
-}
 
 type ProductContextType = {
     products: ProductType[],
