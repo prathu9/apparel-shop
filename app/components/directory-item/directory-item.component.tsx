@@ -1,16 +1,16 @@
 import Image from "next/image";
 import { CategoryItemType } from "../../type";
-import "./category-item.style.scss";
+import "./directory-item.style.scss";
 
-type CategoryItemProp = {
-  categoryItem: CategoryItemType;
+type DirectoryItemProp = {
+  directoryItem: CategoryItemType;
 };
 
-const CategoryItem = ({ categoryItem }: CategoryItemProp) => {
-  const { imageUrl, title } = categoryItem;
+const DirectoryItem = ({ directoryItem }: DirectoryItemProp) => {
+  const { imageUrl, title } = directoryItem;
 
   return (
-    <div className="category-container">
+    <div className="directory-item-container">
       <Image
         className="background-image object-cover"
         src={imageUrl}
@@ -19,7 +19,7 @@ const CategoryItem = ({ categoryItem }: CategoryItemProp) => {
         sizes="(min-width: 1000px) 100%"
       />
 
-      <div className="category-body-container">
+      <div className="directory-item-body">
         <h2>{title}</h2>
         <p>Shop Now</p>
       </div>
@@ -27,4 +27,4 @@ const CategoryItem = ({ categoryItem }: CategoryItemProp) => {
   );
 };
 
-export default CategoryItem;
+export default DirectoryItem;

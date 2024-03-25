@@ -1,7 +1,7 @@
-import Shop from "./Shop.component";
+import CategoriesPreview from "../components/categories-preview/categories-preview.component";
 
 export default function Page(){
     return(
-        <Shop />
+        <CategoriesPreview />
     )
 }

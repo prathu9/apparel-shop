@@ -3,7 +3,7 @@ import { roboto_condensed } from "./font";
 import "./globals.css";
 import Navigation from "./components/layout/navigation.component";
 import { UserProvider } from "./context/user.context";
-import { ProductProvider } from "./context/product.context";
+import { CategoriesProvider } from "./context/categories.context";
 import { CartProvider } from "./context/cart.context";
 
 export const metadata: Metadata = {
@@ -20,12 +20,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto_condensed.className}>
         <UserProvider>
-          <ProductProvider>
+          <CategoriesProvider>
             <CartProvider>
             <Navigation />
             {children}
             </CartProvider>
-          </ProductProvider>
+          </CategoriesProvider>
         </UserProvider>
       </body>
     </html>
