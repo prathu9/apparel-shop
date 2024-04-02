@@ -2,6 +2,7 @@ export type CategoryItemType = {
     id: string | number;
     title: string;
     imageUrl: string;
+    route: string;
 };
 
 export type ProductType = {
