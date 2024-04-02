@@ -11,6 +11,10 @@ const nextConfig = {
         sourceMap: false,
     },
     productionBrowserSourceMaps: false,
+    // Enables the styled-components SWC transform
+    compiler: {
+        styledComponents: true,
+    },
     images: {
         remotePatterns: [
             {

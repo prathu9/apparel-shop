@@ -1,29 +1,31 @@
+"use client";
 import Image from "next/image";
 import { CategoryItemType } from "../../type";
-import "./directory-item.style.scss";
+import {
+  BackgroundImage,
+  DirectoryItemContainer,
+  DirectoryItemBody,
+} from "./directory-item.style";
+import { StyleSheetManager } from "styled-components";
+import isPropValid from "@emotion/is-prop-valid";
 
 type DirectoryItemProp = {
   directoryItem: CategoryItemType;
 };
 
 const DirectoryItem = ({ directoryItem }: DirectoryItemProp) => {
-  const { imageUrl, title } = directoryItem;
+  const { imageUrl, title, ...rest } = directoryItem;
 
   return (
-    <div className="directory-item-container">
-      <Image
-        className="background-image object-cover"
-        src={imageUrl}
-        alt="bg image"
-        fill
-        sizes="(min-width: 1000px) 100%"
-      />
-
-      <div className="directory-item-body">
+    <DirectoryItemContainer>
+      <StyleSheetManager shouldForwardProp={isPropValid}>
+        <BackgroundImage imageurl={imageUrl} />
+      </StyleSheetManager>
+      <DirectoryItemBody>
         <h2>{title}</h2>
         <p>Shop Now</p>
-      </div>
-    </div>
+      </DirectoryItemBody>
+    </DirectoryItemContainer>
   );
 };
 

@@ -1,14 +1,14 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 
-import "./navigation.styles.scss";
 import { useContext } from "react";
 import { UserContext } from "../../context/user.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import { CartContext } from "../../context/cart.context";
+import { NavigationContainer, LogoContainer, NavLinksContainer, NavLink } from "./navigation.styles";
+import Link from "next/link";
 
 const Navigation = () => {
     const {currentUser} = useContext(UserContext);
@@ -21,37 +21,38 @@ const Navigation = () => {
     console.log("user", currentUser);
     return(
         <>
-            <div className="navigation">
-                <Link className="logo-container" href="/">
+            <NavigationContainer>
+                <LogoContainer href="/">
                     <Image
                         src="/crown.svg"
                         alt="logo"
                         width={100}
                         height={100}
+                        priority
                     />
-                </Link>
-                <div className="nav-links-container">
-                    <Link className="nav-link" href="/shop">
+                </LogoContainer>
+                <NavLinksContainer>
+                    <NavLink as={Link} href="/shop">
                         SHOP
-                    </Link>
+                    </NavLink>
                     {
                         currentUser? 
                         (
-                            <span className="nav-link" onClick={signOutHandler}>
+                            <NavLink onClick={signOutHandler}>
                                 SIGN OUT
-                            </span>
+                            </NavLink>
                         ):(
-                            <Link className="nav-link" href="/auth">
+                            <NavLink as={Link} href="/auth">
                             SIGN IN
-                        </Link>
+                        </NavLink>
                         )
                     }
                     <CartIcon />
-                </div>
+                </NavLinksContainer>
                 {
                     isCartOpen && <CartDropdown />
                 }
-            </div>
+            </NavigationContainer>
         </>
     )
 }
