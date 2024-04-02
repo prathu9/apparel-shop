@@ -1,14 +1,13 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-
-import "./navigation.styles.scss";
 import { useContext } from "react";
 import { UserContext } from "../../context/user.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import { CartContext } from "../../context/cart.context";
+import "./navigation.styles.scss";
 
 const Navigation = () => {
     const {currentUser} = useContext(UserContext);
