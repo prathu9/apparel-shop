@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { CategoryItemType } from "../../type";
 import {
   BackgroundImage,
@@ -8,16 +7,21 @@ import {
 } from "./directory-item.style";
 import { StyleSheetManager } from "styled-components";
 import isPropValid from "@emotion/is-prop-valid";
+import { useRouter } from "next/navigation";
 
 type DirectoryItemProp = {
   directoryItem: CategoryItemType;
 };
 
 const DirectoryItem = ({ directoryItem }: DirectoryItemProp) => {
-  const { imageUrl, title, ...rest } = directoryItem;
+  const { imageUrl, title, route } = directoryItem;
+
+  const router = useRouter();
+
+  const onRouteChangeHandler = () => router.push(route);
 
   return (
-    <DirectoryItemContainer>
+    <DirectoryItemContainer onClick={onRouteChangeHandler}>
       <StyleSheetManager shouldForwardProp={isPropValid}>
         <BackgroundImage imageurl={imageUrl} />
       </StyleSheetManager>
