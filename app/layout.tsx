@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { roboto_condensed } from "./font";
 import "./globals.css";
-import Navigation from "./components/layout/navigation.component";
-import { UserProvider } from "./context/user.context";
-import { CategoriesProvider } from "./context/categories.context";
-import { CartProvider } from "./context/cart.context";
+import Navigation from "../components/layout/navigation.component";
+import { UserProvider } from "../context/user.context";
+import { CategoriesProvider } from "../context/categories.context";
+import { CartProvider } from "../context/cart.context";
 
 export const metadata: Metadata = {
   title: "Create Next App",

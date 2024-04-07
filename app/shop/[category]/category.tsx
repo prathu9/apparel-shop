@@ -1,7 +1,7 @@
 "use client";
 import { FC, useContext, useEffect, useState } from "react";
-import { CategoriesContext } from "../../context/categories.context";
-import ProductCard from "../../components/product-card/product-card.component";
+import { CategoriesContext } from "../../../context/categories.context";
+import ProductCard from "../../../components/product-card/product-card.component";
 
 import "./category.style.scss";
 

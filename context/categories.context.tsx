@@ -1,7 +1,5 @@
 "use client";
 import { createContext, useEffect, useState } from "react";
-import SHOP_DATA from "../shop-data.js";
-// import { CategoriesType } from "../type";
 import { getCategoriesAndDocuments } from "../utils/firebase/firebase.utils";
 import { CategoryItemType } from "../type.js";
 

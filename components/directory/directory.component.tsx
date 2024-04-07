@@ -1,6 +1,5 @@
 import CategoryItem from "../directory-item/directory-item.component";
 import "./directory.style.scss";
-import { useRouter } from "next/navigation";
 
 const categories = [
   {

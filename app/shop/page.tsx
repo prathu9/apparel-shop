@@ -1,4 +1,4 @@
-import CategoriesPreview from "../components/categories-preview/categories-preview.component";
+import CategoriesPreview from "../../components/categories-preview/categories-preview.component";
 
 export default function Page(){
     return(
