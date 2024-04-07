@@ -16,7 +16,7 @@
   }
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -24,14 +24,20 @@
 
 body {
   padding: 20px 40px;
-   /* color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));  */
-} 
+}
+
+@media screen and (max-width: 550px) {
+  body {
+    padding: 20px;
+  }
+}
 
 @layer utilities {
   .text-balance {
