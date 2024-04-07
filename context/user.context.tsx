@@ -5,19 +5,23 @@ import { User } from "firebase/auth";
 
 type UserContextType = {
     currentUser: any,
-    setCurrentUser: Dispatch<any>
+    setCurrentUser: Dispatch<any>,
+    checkUser: boolean
 }
 
 export const UserContext = createContext<UserContextType>({
     currentUser: null,
     setCurrentUser: () => null,
+    checkUser: true
 });
 
 export const UserProvider = ({children}) => {
     const [currentUser, setCurrentUser] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
     const value = {
         currentUser,
-        setCurrentUser
+        setCurrentUser,
+        checkUser: isLoading
     }
 
     useEffect(()=> {
@@ -25,6 +29,7 @@ export const UserProvider = ({children}) => {
             if(user){
                 createUserDocumentFromAuth(user);
             }
+            setIsLoading(false);
             setCurrentUser(user);
         });
 
