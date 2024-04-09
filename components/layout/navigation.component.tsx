@@ -8,6 +8,7 @@ import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import { CartContext } from "../../context/cart.context";
 import "./navigation.styles.scss";
+import MobileMenu from "../mobile-menu/mobile-menu.components";
 
 const Navigation = () => {
     const {currentUser} = useContext(UserContext);
@@ -46,6 +47,7 @@ const Navigation = () => {
                         )
                     }
                     <CartIcon />
+                    <MobileMenu signOutHandler={signOutHandler} />
                 </div>
                 {
                     isCartOpen && <CartDropdown />
