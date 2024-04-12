@@ -15,7 +15,7 @@ export default function AuthPage(){
         if(currentUser || checkUser){
             router.push('/');
         }
-    }, [checkUser, currentUser]);
+    }, [checkUser, currentUser, router]);
 
     if(checkUser && !currentUser){
         return <h1>Loading...</h1>
