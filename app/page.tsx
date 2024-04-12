@@ -1,8 +1,8 @@
-import Directory from "../components/directory/directory.component";
+import Categories from "../components/categories/categories.component";
 
 export default function Home() {
   
   return (
-      <Directory />
+      <Categories />
   );
 }

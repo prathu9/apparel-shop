@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { roboto_condensed } from "./font";
 import "./globals.css";
-import Navigation from "../components/layout/navigation.component";
+import Navigation from "../components/layout/navigation/navigation.component";
+import Footer from "../components/layout/footer/footer.component";
 import { UserProvider } from "../context/user.context";
 import { CategoriesProvider } from "../context/categories.context";
 import { CartProvider } from "../context/cart.context";
@@ -23,7 +24,10 @@ export default function RootLayout({
           <CategoriesProvider>
             <CartProvider>
             <Navigation />
-            {children}
+            <main>
+              {children}
+            </main>
+            <Footer/>
             </CartProvider>
           </CategoriesProvider>
         </UserProvider>

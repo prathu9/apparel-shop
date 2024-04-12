@@ -27,9 +27,12 @@ html{
 }
 
 body {
-  padding: 20px 40px;
   max-width: 100vw;
+  height: 100vh;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -39,10 +42,9 @@ body {
     rgb(var(--background-start-rgb));  */
 }
 
-@media screen and (max-width: 550px) {
-  body {
-    padding: 20px;
-  }
+main{
+  padding: 20px 40px;
+  flex:1;
 }
 
 @layer utilities {
