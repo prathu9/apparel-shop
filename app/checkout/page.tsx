@@ -5,7 +5,7 @@ import "./checkout.styles.scss";
 export default function CheckoutPage(){
     return(
         <div className="checkout-container">
-            <h1>I am the checkout page</h1>
+            <h1>Checkout</h1>
             <CheckoutTable />
         </div>
     )

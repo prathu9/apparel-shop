@@ -18,10 +18,10 @@ const CheckoutTable = () => {
           <span>Description</span>
         </div>
         <div className="header-row">
-          <span>Quantity</span>
+          <span>Price</span>
         </div>
         <div className="header-row">
-          <span>Price</span>
+          <span>Quantity</span>
         </div>
         <div className="header-row">
           <span>Remove</span>
