@@ -3,12 +3,13 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px 0 40px;
+    align-items: center;
+    padding: 20px 40px 0;
   
     .logo-container {
+      display: block;
       height: 100%;
       width: 70px;
-      padding: 10px;
     }
   
     .nav-links-container {
@@ -22,12 +23,19 @@
         padding: 10px 15px;
         cursor: pointer;
       }
-
-      @media screen and (max-width: 640px){
-        .nav-link{
-          display: none;
-        }
-      }
     }
 }
   
+
+@media screen and (max-width: 640px){
+  .navigation{
+    margin: 20px 0 0 0;
+    padding: 0 10px;
+
+    .nav-links-container {
+      .nav-link{
+        display: none;
+      }
+    }
+  }
+}
